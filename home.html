@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus</title>
+    <link rel="icon" type="image/png" href="C:\Users\DOBRY\OneDrive\Documents\GitHub\Web-design\lotus_logo_no_text.png">
+
+    <style>
+        body {
+            margin: 0;
+            background: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background: rgb(255, 255, 255);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid gray;
+        }
+
+        header::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .logo {
+            float: left;
+            height: 96px;
+            width: 114px;
+            padding: 10px 0;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 50px;
+            padding-top: 47px;
+            position: relative;
+        }
+
+        nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d789d7;
+        }
+
+        nav a::before {
+            content: '';
+            display: block;
+            height: 4px;
+            width: 100%;
+            background-color: #9ae17b;
+
+            position: absolute;
+            bottom: -10px;
+            width: 0%;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        .active {
+            font-weight: bold;
+            padding-bottom: 7.5px;
+            border-bottom: 4px solid #9ae17b;
+            color: #d789d7;
+        }
+
+        #forest {
+            float: right;
+            width: 25%;
+            height: auto;
+            padding-left: 200px;
+        }
+
+        .pos_cen {
+            padding-top: 150px;
+        }
+
+        .text {
+            padding: 0 100px 0 50px;
+            color: #3c3c3c;
+        }
+
+        #donate_button_place {
+            padding-left: 35px;
+        }
+
+        .donate {
+            background-image: linear-gradient(125deg, #9d65c9, #d789d7 50%, #9ae17b);
+            border: 2px solid #9ae17b;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+            outline: none;
+            padding: 13px 23px;
+            text-align: center;
+            text-decoration: none;
+            width: auto;
+        }
+
+        .line {
+            clear: both;
+            width: 85%;
+            margin-top: 30px;
+            margin-bottom: 30px; 
+            border: none;
+            border-top: 1px solid gray;
+        }
+
+        .section_two {
+            background-color: #dadada;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-container .image {
+            position: relative;
+            flex: 0 0 calc(25% - 50px);
+            margin: 25px;
+            overflow: hidden;
+        }
+
+        .image-container .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-container .image .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container .image:hover .overlay {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #9ae17b;
+            padding: 20px 0;
+            border-top: 1px solid black;
+        }
+
+        .footer-sections {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            margin: 0 10px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+            padding-left: 50px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+            padding-left: 50px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: #d789d7;
+            border-bottom: 2px solid white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <img src="lotus_logo.png" alt="logo" class="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="profile.html">User profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">About Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="pos_cen" id="mission">
+            <span class="container" class="text" >
+                <img src="forest.jpg" alt="forest" id="forest">
+                <h4><b>OUR MISSION</b></h4>
+                <h1>Conserving the lands and waters on which all life depends</h1>
+                <p>Let's work to safeguard, rejuvenate, and advocate for the responsible use of land ecosystems. We'll also ensure forests are managed sustainably, combat desertification, reverse land degradation, and put a stop to the loss of biodiversity.</p>
+                <br>
+                <a href="shop.html" id="donate_button_place">
+                    <button class="donate" role="button">Donate</button>
+                </a>
+                <br><br><br id="extra_content"><br><br>
+            </span>
+        </div>
+    </div>
+    <hr class="line">
+
+    <div class="section_two">
+        <h2>Extra Content</h2>
+        <p>You can find more information by clicking on the images below</p>
+        <div class="image-container">
+            <div class="image">
+            <a href="content_ST1.html">
+                <img src="placeholder-image-square.jpg" alt="Image 1">
+                <div class="overlay">Text Overlay 1</div>
+            </a>
+            </div>
+            <div class="image">
+            <a href="content_ST2.html">
+                <img src="placeholder-image-square.jpg" alt="Image 2">
+                <div class="overlay">Text Overlay 2</div>
+            </a>
+            </div>
+            <div class="image">
+            <a href="content_ST3.html">
+                <img src="placeholder-image-square.jpg" alt="Image 3">
+                <div class="overlay">Text Overlay 3</div>
+            </a>
+            </div>
+            <div class="image">
+            <a href="content_ST4.html">
+                <img src="placeholder-image-square.jpg" alt="Image 4">
+                <div class="overlay">Text Overlay 4</div>
+            </a>
+            </div>
+        </div>
+    </div><hr class="line">
+
+    <footer>
+        <div class="footer-sections">
+            <img src="lotus_logo.png" alt="logo" class="logo">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#extra_content">Extra Content</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="team.html">About Us</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <!-- Add more footer sections as needed -->
+          </div>
+    </footer>
+
+</body>
+</html>
