@@ -18,6 +18,7 @@ function updateTotalCost() {
 		totalCost += flowerData[i].quantity * flowerData[i].cost
 	}
 	document.getElementById("total_cost").innerHTML = `Total Purchase: ${totalCost}`
+	sessionStorage.setItem('total_cost', totalCost)
 }
 
 /**
@@ -52,9 +53,12 @@ function validateBasketAndCheckout() {
 	}	
 	if( itemsInBasketCount === 0) {
 		// If there are no items in the basket, alert user
-		alert("You have no items in your basket, you need to add items to the basket in order to checkout.")
+		alert("You need at least one or more items before you can go checkout.")
 		return
 	} else {
-		alert('Checkout successful')
+		window.location.href = "checkOut.html";
 	}
 }
+
+
+
