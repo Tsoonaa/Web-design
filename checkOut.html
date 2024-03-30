@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <style>
+
+        body{
+            background-color:rgba(199, 199, 28, 0.219);
+        }
+
+        .main_header{
+            margin:40px;
+            font-family: impact;
+            font-weight:400;
+        }
+        
+        .container {
+        display: flex;
+        margin: 40px;
+        }
+
+        .checkout_mate{
+            border: solid;
+            width: 200px;
+            height: 400px;
+            padding: 35px;
+            border-style: double;
+            background-color: #1f143d;
+            color: white;
+            font-family: system-ui;
+            font-weight: 50;
+            border-color: grey;
+        }
+
+    </style>
+    <script type="text/javascript">
+        function setTotalCost() {
+            const totalCost = parseInt(sessionStorage.getItem('total_cost'))
+            console.log('sup', totalCost)
+            document.getElementById("total_cost").innerHTML = `Total Purchase: ${totalCost}`
+        }
+        window.onload = setTotalCost
+    </script>
+</head>
+<body>
+    <button><a href="shop.html">Back to shop!</a></button>
+    
+
+        <h2 class="main_header">CHECKOUT SECTION</h2>
+
+       <div class="main_container">
+        <form>
+            <div class="checkout_mate">
+                <header><h4 class="payment_header">Payment details</h4></header>
+                <label for="fname">Name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="e.g. Homer" required><br>
+                <label for="lname">Surname:</label><br>
+                <input type="text" id="surname" name="surname" placeholder="Simpson" required><br>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address" placeholder="Pressboard Estates" required><br>
+                <label for="city" id="city" name="city">City:</label><br>
+                <input type="text" id="city" name="city" placeholder="Springfield" required><br>
+                <label for="creditcard">Credit Card:</label><br>
+                <input type="text" id="creditcard" name="creditcard" maxlength="19" placeholder="xxxx-xxxx-xxxx-xxxx" required><br>
+                <label for="expiry_date" id="expiry_date" name="expirydate">Expiry Date:</label><br>
+                <input type="text" id="expiry_date" name="expiry_date" placeholder="mm/yy" size="4" required maxlength=""><br>
+                <label for="CCV">CCV:</label><br>
+                <input type="text" id="CCV" name="CCV" size="3" placeholder="xxx" maxlength="3" required><br>
+                <div class="totalPurchase" id="total_cost">Total Purchase: </div>
+                
+                <input type="submit">
+              </form>
+              
+            </div>
+
+        <script src="shop.js"></script>
+</body>
+</html>
