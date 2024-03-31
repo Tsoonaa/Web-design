@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Shop</title>
+    <style>
+        body{ 
+    float:left;
+    background-color: rgba(199, 199, 28, 0.219);
+    font-family: system-ui;
+}
+
+
+.container{
+    width: 1000px;
+    margin: auto;
+    font-size: 12px;
+}
+
+header h1{
+    display: grid;
+    grid-template-columns: 4cm 0%;
+    margin-top: 20px;
+}
+
+
+header{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #6d9e58;
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.main_heading{
+    display: flex;
+    border-style: solid;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    margin-right: 500px;
+    border-width: 10px;
+    border-color:#6fa15a;
+}
+
+.main_heading img{
+    width: 60px;
+}
+
+section{
+    
+    margin: 0;
+    float:left;
+    align-items: center;
+    
+}
+
+section h2{
+    font-weight:200;
+    font-size:30px;
+    margin: 70px;
+}
+.shop_container {
+    float: left;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing:border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding-right: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+
+  }
+  
+  .shop_container img {
+    width: 100px;
+    height: 115px;
+  }
+
+  .product_title{
+    float:left;
+    font-weight: 500;
+  }
+ 
+  
+  .shop_container h2 {
+    margin: 0px 0;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .shop_container .price {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+.product_1{
+    float:right;
+  }
+.product_2{
+    float:right;
+}
+.product_3{
+    float:right;
+}
+.product_4{
+    float:right;
+}
+.product_5{
+    float:right;
+}
+.product_6{
+    float:right;
+}
+
+.shop_container:hover{
+    background-color: #6fa15a;
+}
+
+.shop_container button{
+    background-color:black;
+    color:white;
+    font-weight:100;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+
+}
+
+.shop_container button:active{
+    background-color:white;
+    color:black;
+}
+
+
+
+.purchase{
+    position: fixed;
+    left: calc(100% - 500px);
+    top: 0;
+    width: 500px;
+    background-color: #9ae17b;
+    height: 100vh;
+    transition: 0.5s;
+    border-style: solid;
+    border-style:inset;
+    border-color: black;
+}
+
+.purchase{
+    float:left;
+}
+.purchase h1{
+    color: black;
+    font-weight: 100;
+    padding: 0 15px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.purchase .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    font-weight: 500;
+    font-size: 30px;
+    padding-top:20px;
+    background-color: green;
+    
+}
+
+.purchase .cartItemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.purchase .cartItems{
+    background-color: green;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: left;
+    padding-right: 95px;
+    align-items:center;
+    font-weight: bold;
+}
+
+
+.purchase img{
+    margin-right: 20px;
+    width:50px;
+}
+
+.name{
+    margin-right:15px;
+}
+
+.productPrice{
+    margin-right: 20px;
+}
+
+.checkout_button{
+    background-color:#68e533;
+    border-radius: 2px;
+    padding-right:20px;
+    padding-bottom: 4px;
+}
+    </style>
+</head>
+<body>
+    <!--MAIN HEADER SECTION-->
+    <div>
+        <a href="home.html"><i><b>Back to home page.</b></i></a> 
+    </div>
+    <div class="container">
+        <header>
+            <div class="main_heading">
+                <img src="public/lotus_logo.png" alt="lotus_logo">
+                <h1>Lotus Shop</h1>
+                <img src="public/lotus_logo.png" alt="lotus logo">
+            </div>
+            <div class="shopping"></div>
+            <div class="shopping">
+            </div>
+        </header>
+        <!--ITEMS SECTION-->
+        <section class="products">
+            <h2 class="flower_title"><i>Flower Donations!</i></h2>
+            <div class="shop_container">
+                <img class="product_img" src="public/flower1.png" alt="flower1">
+                <h2 class="product_title">Flower 1 donation!</h2>
+                <span class="price">£10</span>
+                <button class="product_1" onclick="addFlower(0)">Add to basket</button>
+            </div>
+            
+
+            <div class="shop_container">
+                <img class="product_img" src="public/flower2.png" alt="flower2">
+                <h2 class="product_title">Flower 2 donation!</h2>
+                <span class="price">£15</span>
+                <button class="product_2" onclick="addFlower(1)">Add to basket</button>
+
+            </div>
+            
+            <div class="shop_container">
+                <img class="product_img" src="public/flower3.png" alt="flower3">
+                <h2 class="product_title">Flower 3 donation!</h2>
+                <span class="price">£20</span>
+                <button class="product_3" onclick="addFlower(2)">Add to basket</button>
+
+            </div>
+
+            <div class="shop_container">
+                <img class="product_img" src="public/flower4.png" alt="flower4">
+                <h2 class="product_title">Flower 4 donation!</h2>
+                <span class="price">£25</span>
+                <button class="product_4" onclick="addFlower(3)">Add to basket</button>
+
+            </div>
+
+            <div class="shop_container">
+                <img class="product_img" src="public/flower5.png" alt="flower5">
+                <h2 class="product_title">Flower 5 donation!</h2>
+                <span class="price">£30</span>
+                <button class="product_5" onclick="addFlower(4)">Add to basket</button>
+
+            </div>
+
+            <div class="shop_container">
+                <img class="product_img" src="public/flower6.png" alt="flower6">
+                <h2 class="product_title">Flower 6 donation!</h2>
+                <span class="price">£60</span>
+                <button class="product_6" onclick="addFlower(5)">Add to basket</button>
+
+            </div>
+
+        </section>
+    
+    </div>
+        
+    <!--SHOPPING CART SECTION-->
+        <div class="purchase">
+            <h1 class="cart_header">Your shopping cart </h1>
+            <div class="cartItemsContainer">
+                <div class="cartItems">
+                    <div class="cartList"></div>
+                    <div class="image">
+                        <img src="public/flower1.png" alt="flower1">
+                    </div>
+                    <div class="name">Flower 1 Donation!</div>
+                    <div class="productPrice">£10</div>
+                    <button class="remove_item1" onclick="removeFlower(0)">-</button>
+                    <div class="product_quantity1" id="flower_index_0_quantity">no.</div>
+                    <button class="add_item1" onclick="addFlower(0)">+</button>
+                </div>
+    
+                <div class="cartItems">
+                    <div class="cartList"></div>
+                    <div class="image">
+                        <img src="public/flower2.png" alt="flower2">
+                    </div>
+                    <div class="name">Flower 2 Donation!</div>
+                    <div class="productPrice">£15</div>
+                    <button class="remove_item2" onclick="removeFlower(1)">-</button>
+                    <div class="product_quantity2" id="flower_index_1_quantity">no.</div>
+                    <button class="add_item2" onclick="addFlower(1)">+</button>
+                </div>
+    
+                <div class="cartItems">
+                    <div class="cartList"></div>
+                    <div class="image">
+                        <img src="public/flower3.png" alt="flower3">
+                    </div>
+                    <div class="name">Flower 3 Donation!</div>
+                    <div class="productPrice">£20</div>
+                    <button class="remove_item3" onclick="removeFlower(2)">-</button>
+                    <div class="product_quantity3" id="flower_index_2_quantity">no.</div>
+                    <button class="add_item3" onclick="addFlower(2)">+</button>
+                </div>
+    
+                <div class="cartItems">
+                    <div class="cartList"></div>
+                    <div class="image">
+                        <img src="public/flower4.png" alt="flower4">
+                    </div>
+                    <div class="name">Flower 4 Donation!</div>
+                    <div class="productPrice">£25</div>
+                    <button class="remove_item4" onclick="removeFlower(3)">-</button>
+                    <div class="product_quantity4" id="flower_index_3_quantity">no.</div>
+                    <button class="add_item4" onclick="addFlower(3)">+</button>
+                </div>
+    
+    
+                <div class="cartItems">
+                    <div class="cartList"></div>
+                    <div class="image">
+                        <img src="public/flower5.png" alt="flower5">
+                    </div>
+                    <div class="name">Flower 5 Donation!</div>
+                    <div class="productPrice">£30</div>
+                    <button class="remove_item5" onclick="removeFlower(4)">-</button>
+                    <div class="product_quantity5" id="flower_index_4_quantity">no.</div>
+                    <button class="add_item5" onclick="addFlower(4)">+</button>
+                </div>
+    
+    
+                <div class="cartItems">
+                    <div class="cartList"></div>
+                    <div class="image">
+                        <img src="public/flower6.png" alt="flower6">
+                    </div>
+                    <div class="name">Flower 6 Donation!</div>
+                    <div class="productPrice">£60</div>
+                    <button class="remove_item6" onclick="removeFlower(5)">-</button>
+                    <div class="product_quantity6" id="flower_index_5_quantity">no.</div>
+                    <button class="add_item6" onclick="addFlower(5)">+</button>
+               
+            </div>
+            <div><label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="e.g. Homer" required><br>
+                <label for="surname">Surname:</label><br>
+                <input type="text" id="surname" name="surname" placeholder="Simpson" required><br>
+                <input type="submit" class="checkout_button" onclick="validateBasketAndCheckout()">
+            </div> 
+              <!--ALL ITEMS ADDED TO CART GO HERE-->  
+                <div class="checkOut">
+                <div class="totalPurchase" id="total_cost">Total Purchase:</div>
+            </div>
+          </div>
+        </div> 
+
+
+
+        <script>
+            // Keeping track of flower quantity and price here
+const flowerData = [
+	{name: 'Flower 1', quantity: 0, cost: 10},
+	{name: 'Flower 2', quantity: 0, cost: 15},
+	{name: 'Flower 3', quantity: 0, cost: 20},
+	{name: 'Flower 4', quantity: 0, cost: 25},
+	{name: 'Flower 5', quantity: 0, cost: 30},
+	{name: 'Flower 6', quantity: 0, cost: 60},
+]
+
+
+/**
+ * Calculates updated basket cost and updates text
+ */
+function updateTotalCost() {
+	let totalCost = 0
+	for(let i=0; i<flowerData.length; i++){
+		// iterate over each item in the basket and add item quantity x cost to the total
+		totalCost += flowerData[i].quantity * flowerData[i].cost
+	}
+	document.getElementById("total_cost").innerHTML = `Total Purchase: ${totalCost}`
+	
+}
+
+/**
+ * Adds flower to basket and updates the text in the shopping cart section
+ */
+function addFlower(index) {
+	flowerData[index].quantity += 1
+	document.getElementById(`flower_index_${index}_quantity`).innerHTML = `no. ${flowerData[index].quantity}`
+	updateTotalCost()
+}
+
+/**
+ * Removes a flower from the basket and updates the text in the shopping cart section
+ */
+function removeFlower(index) {
+	if(flowerData[index].quantity > 0){
+		// Only decrement quantity if current quantity is greater than 0 so we don't get negative quanitities
+		flowerData[index].quantity -= 1
+		document.getElementById(`flower_index_${index}_quantity`).innerHTML = `no. ${flowerData[index].quantity}`
+		updateTotalCost()
+	}
+}
+
+/**
+ * Validate basket and checkout
+ */
+function validateBasketAndCheckout() {
+	// Check how many items are in the basket
+	let itemsInBasketCount = 0
+	for(let i=0; i<flowerData.length; i++){
+		itemsInBasketCount += flowerData[i].quantity 
+	}	
+	if( itemsInBasketCount === 0) {
+		// If there are no items in the basket, alert user
+		alert("You need at least one or more items before you can go checkout.")
+		return
+	} else {
+		alert("Items have successfully been purchased!");
+	} 
+   
+}
+
+        </script>
+</body>
+</html>
