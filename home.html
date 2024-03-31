@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotus</title>
-    <link rel="icon" type="image/png" href="C:\Users\DOBRY\OneDrive\Documents\GitHub\Web-design\lotus_logo_no_text.png">
+    <!-- Title of the page -->
+    <title>Lotus Home</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="lotus_logo_no_text.png">
 
+    <!-- Internal CSS styling -->
     <style>
+        /* General styling for the body */
         body {
             margin: 0;
             background: white;
@@ -14,11 +19,13 @@
             font-weight: 400;
         }
 
+        /* Container styling */
         .container {
             width: 80%;
             margin: 0 auto;
         }
 
+        /* Header styling */
         header {
             background: rgb(255, 255, 255);
             position: fixed;
@@ -27,12 +34,14 @@
             border-bottom: 1px solid gray;
         }
 
+        /* Clearfix for header */
         header::after {
             content: '';
             display: table;
             clear: both;
         }
 
+        /* Logo styling */
         .logo {
             float: left;
             height: 96px;
@@ -40,6 +49,7 @@
             padding: 10px 0;
         }
 
+        /* Navigation styling */
         nav {
             float: right;
         }
@@ -74,7 +84,6 @@
             height: 4px;
             width: 100%;
             background-color: #9ae17b;
-
             position: absolute;
             bottom: -10px;
             width: 0%;
@@ -84,6 +93,7 @@
             width: 100%;
         }
 
+        /* Styling for active navigation item */
         .active {
             font-weight: bold;
             padding-bottom: 7.5px;
@@ -91,26 +101,31 @@
             color: #d789d7;
         }
 
-        #forest {
+        /* Lake image styling */
+        #lake {
             float: right;
             width: 25%;
             height: auto;
             padding-left: 200px;
         }
 
+        /* Center positioning */
         .pos_cen {
             padding-top: 150px;
         }
 
+        /* Text styling */
         .text {
             padding: 0 100px 0 50px;
             color: #3c3c3c;
         }
 
+        /* Donate button placement */
         #donate_button_place {
             padding-left: 35px;
         }
 
+        /* Donate button styling */
         .donate {
             background-image: linear-gradient(125deg, #9d65c9, #d789d7 50%, #9ae17b);
             border-radius: 8px;
@@ -123,12 +138,14 @@
             line-height: 20px;
             margin: 0;
             outline: none;
+            border: none;
             padding: 13px 23px;
             text-align: center;
             text-decoration: none;
             width: auto;
         }
 
+        /* Line styling */
         .line {
             clear: both;
             width: 85%;
@@ -138,17 +155,20 @@
             border-top: 1px solid gray;
         }
 
+        /* Section two styling */
         .section_two {
             background-color: #dadada;
             padding-top: 10px;
             text-align: center;
         }
 
+        /* Image container styling */
         .image-container {
             display: flex;
             justify-content: center;
         }
 
+        /* Individual image styling */
         .image-container .image {
             position: relative;
             flex: 0 0 calc(25% - 50px);
@@ -170,6 +190,8 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
+            font-size: 20px;
+            font-weight: 550;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -181,17 +203,20 @@
             opacity: 1;
         }
 
+        /* Footer styling */
         footer {
             background-color: #9ae17b;
             padding: 20px 0;
             border-top: 1px solid black;
         }
 
+        /* Footer sections container */
         .footer-sections {
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        /* Individual footer section styling */
         .footer-section {
             display: inline-block;
             vertical-align: top;
@@ -215,11 +240,13 @@
             padding-left: 50px;
         }
         
+        /* Global link styling */
         a {
             text-decoration: none;
             color: black;
         }
 
+        /* Hover effect on links */
         a:hover {
             color: #d789d7;
             border-bottom: 2px solid white;
@@ -229,11 +256,12 @@
 </head>
 
 <body>
+    <!-- Header section -->
     <header>
         <div class="container">
-
+            <!-- Logo -->
             <img src="lotus_logo.png" alt="logo" class="logo">
-
+            <!-- Navigation menu -->
             <nav>
                 <ul>
                     <li><a href="home.html" class="active">Home</a></li>
@@ -245,62 +273,72 @@
                     <li><a href="team.html">About Us</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
 
+    <!-- Main content container -->
     <div class="container">
-
+        <!-- Mission section -->
         <div class="pos_cen" id="mission">
             <span class="container" class="text" >
-                <img src="forest.jpg" alt="forest" id="forest">
+                <!-- Lake image -->
+                <img src="lake.png" alt="lake" id="lake">
                 <h4><b>OUR MISSION</b></h4>
                 <h1>Conserving the lands and waters on which all life depends</h1>
-                <p>Let's work to safeguard, rejuvenate, and advocate for the responsible use of land ecosystems. We'll also ensure forests are managed sustainably, combat desertification, reverse land degradation, and put a stop to the loss of biodiversity.</p>
+                <p>Protecting our land is not just about preserving nature; it's about safeguarding the very foundation of life itself. Each acre conserved is a pledge to future generations, a commitment to sustain the harmony between humanity and the earth. Let us be the guardians of our land, ensuring its richness endures for all who walk upon it.</p>
                 <br>
+                <!-- Donate button -->
                 <a href="shop.html" id="donate_button_place">
                     <button class="donate" role="button">Donate</button>
                 </a>
-                <br><br><br id="extra_content"><br><br>
+                <br><br><br><br><br>
             </span>
         </div>
     </div>
+    <!-- Divider line -->
     <hr class="line">
 
+    <!-- Section two -->
     <div class="section_two">
-        <h2>Extra Content</h2>
+        <h2 id="extra_content">Extra Content</h2>
         <p>You can find more information by clicking on the images below</p>
         <div class="image-container">
+            <!-- Individual image links -->
             <div class="image">
-            <a href="content_ST1.html">
-                <img src="placeholder-image-square.jpg" alt="Image 1">
-                <div class="overlay">Text Overlay 1</div>
-            </a>
+                <a href="content_ST1.html">
+                    <img src="bee_for_content_1.png" alt="Image 1">
+                    <div class="overlay">Bees Saving The World</div>
+                </a>
             </div>
             <div class="image">
-            <a href="content_ST2.html">
-                <img src="placeholder-image-square.jpg" alt="Image 2">
-                <div class="overlay">Text Overlay 2</div>
-            </a>
+                <a href="content_ST2.html">
+                    <img src="agroforestry_for_content_2.png" alt="Image 2">
+                    <div class="overlay">Agroforestry: Harnessing the Power of<br>Trees to Preserve Land</div>
+                </a>
             </div>
             <div class="image">
-            <a href="content_ST3.html">
-                <img src="placeholder-image-square.jpg" alt="Image 3">
-                <div class="overlay">Text Overlay 3</div>
-            </a>
+                <a href="content_ST3.html">
+                    <img src="placeholder-image-square.jpg" alt="Image 3">
+                    <div class="overlay">Text Overlay 3</div>
+                </a>
             </div>
             <div class="image">
-            <a href="content_ST4.html">
-                <img src="placeholder-image-square.jpg" alt="Image 4">
-                <div class="overlay">Text Overlay 4</div>
-            </a>
+                <a href="content_ST4.html">
+                    <img src="placeholder-image-square.jpg" alt="Image 4">
+                    <div class="overlay">Text Overlay 4</div>
+                </a>
             </div>
         </div>
-    </div><hr class="line">
+    </div>
+    <!-- Divider line -->
+    <hr class="line">
 
+    <!-- Footer -->
     <footer>
         <div class="footer-sections">
+            <!-- Logo -->
             <img src="lotus_logo.png" alt="logo" class="logo">
+            <!-- Footer sections -->
             <div class="footer-section">
                 <h3>Explore</h3>
                 <ul>
@@ -316,9 +354,29 @@
                     <li><a href="feedback.html">Feedback</a></li>
                 </ul>
             </div>
-            <!-- Add more footer sections as needed -->
-          </div>
+            <div class="footer-section">
+                <h3>Extra Info</h3>
+                <ul>
+                    <li><a href="pageEditor_ST2.html">Page Editor</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
+
+    <!-- Smooth scrolling script for anchor links -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const offsetTop = document.querySelector(this.getAttribute('href')).offsetTop - 100;
+                window.scroll({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

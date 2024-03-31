@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="C:\Users\DOBRY\OneDrive\Documents\GitHub\Web-design\lotus_logo_no_text.png">
+    <!-- Title of the page -->
+    <title>Lotus Feedback</title>
+
+    <!-- Internal CSS styling -->
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial, Helvetica', sans-serif;
+        }
+
+        /* General styling for the body */
+        body {
+            margin: 0;
+            background: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+        }
+
+        /* Contact form container */
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+            flex-direction: column;
+        }
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Header styling */
+        header {
+            background: rgb(255, 255, 255);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid gray;
+        }
+
+        header::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        /* Logo styling */
+        .logo {
+            float: left;
+            height: 96px;
+            width: 114px;
+            padding: 10px 0;
+        }
+
+        /* Navigation styling */
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 50px;
+            padding-top: 47px;
+            position: relative;
+        }
+
+        nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d789d7;
+        }
+
+        nav a::before {
+            content: '';
+            display: block;
+            height: 4px;
+            width: 100%;
+            background-color: #9ae17b;
+
+            position: absolute;
+            bottom: -10px;
+            width: 0%;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        /* Styling for active navigation item */
+        .active {
+            font-weight: bold;
+            padding-bottom: 7.5px;
+            border-bottom: 4px solid #9ae17b;
+            color: #d789d7;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #9ae17b;
+            padding: 20px 0;
+            border-top: 1px solid black;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Footer sections container */
+        .footer-sections {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Individual footer section styling */
+        .footer-section {
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            margin: 0 10px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+            padding-left: 50px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+            padding-left: 50px;
+        }
+        
+        /* Global link styling */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Hover effect on links */
+        a:hover {
+            color: #d789d7;
+            border-bottom: 2px solid white;
+        }
+
+        /* Styling for feedback form */
+        .contact h2 {
+            font-size: 40px;
+            color: #d789d7;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 120px;
+        }
+
+        .contact form {
+            width: 600px;
+            text-align: center;
+        }
+
+        /* Input box and field styling */
+        form .input_box {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form .subject_input {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .input_box .input_field {
+            width: 48.5%;
+        }
+
+        .field .item {
+            width: 100%;
+            padding: 18px;
+            background: transparent;
+            border: 2px solid #9ae17b;
+            outline: none;
+            border-radius: 6px;
+            font-size: 16px;
+            margin: 12px 0;
+            color: #333;
+        }
+
+        .field .item::placeholder {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        #form_radio {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 18px;
+            background: transparent;
+            border: 2px solid #9ae17b;
+            outline: none;
+            border-radius: 6px;
+            margin: 12px 0;
+            color: #333;
+        }
+
+        #form_radio radio {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        legend {
+            font-size: 14px;
+            font-weight: 600;
+            color: #d789d7;
+        }
+
+        legend p {
+            font-size: 10px;
+            color: #d789d7;
+            font-weight: 400;
+        }
+
+        /* Textarea field styling */
+        form .textarea_field .item {
+            resize: none;
+        }
+
+        /* Button styling */
+        form button {
+            padding: 12px 32px;
+            background: #d789d7;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            box-shadow: 0 0 10px #d789d7;
+            font-size: 16px;
+            color: #333;
+            letter-spacing: 1px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.5s;
+        }
+
+        form button:hover {
+            box-shadow: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+
+            <!-- Logo -->
+            <img src="lotus_logo.png" alt="logo" class="logo">
+
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="profile.html">User profile</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="team.html">About Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header> 
+
+    <!-- Feedback form section -->
+    <section class="contact">
+        <h2>Feedback Form</h2>
+
+        <!-- Form submission -->
+        <form action="mailto:kfx18658@fosiq.com" method="post" enctype="text/plain">
+            <!-- Input fields -->
+            <div class="input_box">
+                <div class="input_field field">
+                    <input type="text" placeholder="Full Name" id="name" name="Full Name" class="item" required>
+                </div>
+                <div class="input_field field">
+                    <input type="email" placeholder="Email Address" id="email" name="Email Address" class="item" required>
+                </div>
+            </div>
+    
+            <div class="subject_input">
+                <div class="input_field field">
+                    <input type="text" placeholder="Subject" id="subject" name="Subject" class="item" required>
+                </div>
+            </div>
+    
+            <!-- Rating selection -->
+            <div>
+                <div class="input_field field">
+                    <div id="form_radio">
+                        <legend>Rating <p>(1 being "needs improvement" and 5 being "it's great")</p></legend>
+                        <label>
+                            <input type="radio" name="Rating" value="1" required>
+                            1
+                        </label>
+                        <label>
+                            <input type="radio" name="Rating" value="2">
+                            2
+                        </label>
+                        <label>
+                            <input type="radio" name="Rating" value="3">
+                            3
+                        </label>
+                        <label>
+                            <input type="radio" name="Rating" value="4">
+                            4
+                        </label>
+                        <label>
+                            <input type="radio" name="Rating" value="5">
+                            5
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Message input -->
+            <div class="textarea-field field">
+                <textarea name="Message" id="message" cols="30" rows="10" placeholder="Your Message" class="item" required></textarea>
+            </div>
+    
+            <!-- Submit button -->
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Spacer to push footer down -->
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-sections">
+            <!-- Logo -->
+            <img src="lotus_logo.png" alt="logo" class="logo">
+            <!-- Footer sections -->
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="team.html">About Us</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Extra Info</h3>
+                <ul>
+                    <li><a href="pageEditor_ST2.html">Page Editor</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
