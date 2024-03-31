@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor</title>
+    <link rel="icon" type="image/png" href="lotus_logo_no_text.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+    <style>
+        .dotgothic16-regular {
+        font-family: "DotGothic16", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        body {
+            font-family: "DotGothic16", sans-serif;
+            margin: 0;
+            background-color:#f0dafa;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #b645e8;
+            padding: 10px;
+        }
+
+        .main {
+            background-color: white;
+        }
+
+        .div1 {
+            background-color: #b645e8;
+        }
+
+        .div2 {
+            background-color: #c56aed;
+        }
+
+        .div3 {
+            background-color: #d38ff1;
+        }
+
+        .div4 {
+            background-color: #e2b5f6;
+        }
+
+        .name {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            padding: 5px;
+            margin-bottom: 25px;
+        }
+
+        .main a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: white;
+            border: 2px solid white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="top">
+        <h1>Page Editor</h1>
+    </div>
+
+    <div class="name">
+        <p>Name: Kacper Kedzierski<br>Id: w1973441<br>Role: Student 2<br>The following pages were created by me!</p>
+    </div>
+
+    <div class="main">
+        <div class="div1">
+            <br>
+            <a href="#bottom">-- ⬇ Go to Bottom --</a>
+        </div>
+
+        <div class="div1">
+            <br>
+            <h2>Navigation Bar and Footer</h2>
+            <p>
+                Created a working navigation bar using HTML and CSS that can be used on each part of the website. <br>
+                Current website is highlighted and underlined, same when hovering over any of the other webpage links. <br>
+                The footer contains a few more links, under "Explore" there is a link to different parts of the home page as <br>
+                well as the shop, and under the "Connect" there are links to 'About Us' and the feedback page. I was also the<br>
+                one who created the logo where I took inspiration from a logo template on google images and altered it.<br><br>
+                <a href="navigation.html">-- Link to Navigation Menu --</a><br><br>
+                <a href="footer.html">-- Link to Footer --</a><br><br>
+            </p>
+        </div>
+
+        <div class="div2">
+            <br>
+            <h2>Home Page</h2>
+            <p>
+                Created a home page using HTML, CSS and JavaScript.<br>
+                It consists of the Navigation menu, footer, the main mission <br>
+                of our website extra content section where I have images that are used as <br>
+                links and when hovered over the opacity becomes darker and the text of the content appear.<br>
+                I also used an image next to the main mission as well as having a button underneath the main mission <br>
+                that is used to "donate" or in other words go to the shop page. JavaScript was used for smooth <br>
+                scrolling when using any of the links for navigating the website.<br><br>
+                <a href="home.html">-- Link to Home Page --</a><br><br>
+            </p>
+        </div>
+
+        <div class="div3">
+            <br>
+            <h2>Feedback Page</h2>
+            <p>
+                Created a Feedback page that is easy for the users to navigate through, contains input fields for name, <br>
+                email, subject, and main message, as well as a radio button to allow the user to give the website a rating. <br>
+                When the submit buttom is pressed there is validation to check wheather everything have been filled out as <br>
+                well as if its the correct format (e.g. the email address). The feedback page also contains the navigation <br>
+                bar for easy navigation and the footer. (Created using HTML and CSS)<br><br>
+                <a href="feedback.html">-- Link to Feedback Page --</a><br><br>
+            </p>
+        </div>
+
+        <div class="div4">
+            <br>
+            <h2>Content Page</h2>
+            <p>
+                Created a content page using HTML, CSS and Java Script. It again contains the navigation bar and the footer <br>
+                like the others but also contains links (anchors) underneath the navigation bar that are used to easily navigate <br>
+                through the page, and also has a back to top button in the footer. Included a few images and most of the content <br>
+                of this webpage was generated. Also used JavaScript here as well to make the smooth scrolling when one of the links<br>
+                are clicked, links also have hover effects to easily distinguish.<br><br>
+                <a href="content_ST2.html">-- Link to my Content Page --</a><br><br>
+                <a href="#top">-- ⬆ Go to Top --</a><br><br>
+            </p>
+        </div>
+    </div>
+
+
+    <div id="bottom">
+
+        <script>
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+    
+                    const offsetTop = document.querySelector(this.getAttribute('href')).offsetTop - 100;
+                    window.scroll({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+</body>
+</html>
