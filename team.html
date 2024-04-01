@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Our Team
+    </title>
+    <a href = "header.html"></a>
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Details</h1>
+    <h2>About Us - Hover for details!</h2>
+<div class = "center">
+    <div class="teamMember">
+        <img src="goku.jpg" alt="Team Member 1">
+        <div class="teamInfo">
+            w1980041 (victor)
+            <br>Role: student 3
+            <br>Designed and implemented pages: User Profile | Team
+        </div>
+    </div>
+    <div class="teamMember">
+        <img src="gojo.jpg" alt="Team Member 2">
+        <div class="teamInfo">
+            w1973441 (Kacper)
+            <br>Role: student 2
+            <br>Designed and implemented pages: Home Page | Website template | Navigation bar | Feedback
+        </div>
+    </div>
+    <div class="teamMember">
+        <img src="luffy.jpg" alt="Team Member 3">
+        <div class="teamInfo">
+            w1979153  (Arman)
+            <br>Role: student 1
+            <br>Designed and implemented pages: Splash Page | Shop
+        </div>
+    </div>
+</div>
+
+<a href = "footer.html"></a>
+</body>
+</html>
+
+<style>
+    body {
+        background-color: #f8f4cc;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align:center;
+    }
+    .center{
+        display:flex;
+        justify-content: center;
+    }
+    .teamMember{
+        position: relative; 
+        float: left;
+        width: 20%;
+        padding: 5px;
+    }
+    .teamMember:hover{
+        opacity: 0.6;
+    }
+    .teamInfo {
+        display: none; 
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        background-color: rgba(0, 0, 0, 0.6); 
+        color: #fff; 
+        padding: 5px; 
+        border-radius: 5px;
+        width: 80%; 
+        max-width: 250px; /
+    }
+    .teamMember:hover .teamInfo {
+        display: block; 
+    }
+    img{
+        width:300px;
+        height:300px;
+    }
+</style>
