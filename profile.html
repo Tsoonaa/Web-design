@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        User Profile Page
+    </title>
+    <a href="header.html"></a>
+</head>
+<body>
+
+<div class="container">
+    <div class="slide active-slide" id="personal-details">
+        <h2>Personal Details</h2>
+        <form>
+            <fieldset>
+                <legend>
+                    Personal Information
+                </legend>
+                <label for="first-name">
+                    First Name:
+                </label>
+                <input type="text" id="first-name" name="first-name" required><br><br>
+                <label for="last-name">
+                    Last Name:
+                </label>
+                <input type="text" id="last-name" name="last-name" required><br><br>
+                <label for="email">
+                    Email:
+                </label>
+                <input type="email" id="email" name="email" required><br><br>
+            </fieldset>
+            <div class="btn-container">
+                <button class="btn" onclick="prevSlide()">
+                    Back
+                </button>
+                <button class="btn" onclick="nextSlide(event)">
+                    Next
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="slide" id="course-tasks">
+        <h2>
+            What brings you to this course
+        </h2>
+        <form>
+            <fieldset>
+                <legend>
+                    Reasons for Joining
+                </legend>
+                <label for="reasons">
+                    Reasons:
+                </label><br>
+                <textarea id="reasons" name="reasons" rows="4" cols="50" required></textarea><br><br>
+            </fieldset>
+            <div class="btn-container">
+                <button class="btn" onclick="prevSlide()">
+                    Back
+                </button>
+                <button class="btn" onclick="nextSlide(event)">
+                    Next
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="slide" id="qualifications">
+        <h2>
+            Qualifications
+        </h2>
+        <form>
+            <fieldset>
+                <legend>
+                    Qualifications
+                </legend>
+                <label for="qualifications">
+                    Qualifications:
+                </label><br>
+                <textarea id="qualifications" name="qualifications" rows="4" cols="50" required></textarea><br><br>
+            </fieldset>
+            <div class="btn-container">
+                <button class="btn" onclick="prevSlide()">
+                    Back
+                </button>
+                <button class="btn" onclick="nextSlide(event)">
+                    Next
+                </button> 
+            </div>
+        </form>
+    </div>
+    <div class="slide" id="availability-contact">
+        <h2>
+            Availability and Contact
+        </h2>
+        <form>
+            <fieldset>
+                <legend>
+                    Availability and Contact
+                </legend>
+                <label for="availability">
+                    Availability:
+                </label><br>
+                <textarea id="availability" name="availability" rows="4" cols="50" required></textarea><br><br>
+                <label for="contact">
+                    Contact Information:
+                </label><br>
+                <textarea id="contact" name="contact" rows="4" cols="50" required></textarea><br><br>
+            </fieldset>
+            <div class="btn-container">
+                <button class="btn" onclick="prevSlide()">
+                    Back
+                </button>
+                <button class="btn" onclick="nextSlide(event)">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="slide" id="thank-you">
+        <h2>
+            Thank You
+        </h2>
+        <p>
+            Your profile has been submitted successfully.
+        </p>
+        <div class="btn-container">
+            <button class="btn" onclick="returnToStart()">
+                Return to Start
+            </button>
+        </div>
+    </div>
+
+    <div class="progress-container">
+
+        <div class="progress-bar">0%</div>
+    </div>
+</div>
+
+<a href  = "footer.html"></a>
+
+<script>
+    let currentSlide = 1; 
+    const totalSlides = 5;
+    const progressBar = document.querySelector('.progress-bar');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        updateProgress(); 
+        showSlide(); 
+    });
+
+    function nextSlide(event) {
+        event.preventDefault(); 
+        const form = document.querySelector('form');
+        if (form.checkValidity()) {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateProgress();
+                showSlide();
+            } else {
+                showThankYouSlide(); 
+            }
+        } else {
+            form.reportValidity();
+        }
+    }
+
+    function prevSlide() {
+        const form = document.querySelector('form');
+        if (form.checkValidity()) {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateProgress();
+                showSlide();
+            }
+        } else {
+            form.reportValidity(); 
+        }
+    }
+
+    function updateProgress() {
+        const progress = (currentSlide - 1) * (100 / (totalSlides - 1)); 
+        progressBar.style.width = `${progress}%`;
+        progressBar.textContent = `${Math.round(progress)}%`;
+    }
+
+    function showSlide() {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach((slide, index) => {
+            if (index + 1 === currentSlide) {
+                slide.classList.add('active-slide');
+            } else {
+                slide.classList.remove('active-slide');
+            }
+        });
+    }
+
+    function showThankYouSlide() {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => {
+            slide.classList.remove('active-slide'); 
+        });
+        document.getElementById('thank-you').classList.add('active-slide'); 
+        progressBar.style.width = `100%`;
+        progressBar.textContent = `100%`;
+    }
+
+    function returnToStart() {
+        currentSlide = 1; 
+        const form = document.querySelector('form');
+        form.reset(); 
+        updateProgress(); 
+        showSlide(); 
+    }
+</script>
+
+
+</body>
+</html>
+
+<style>
+    body {
+        background-color: #f8f4cc;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .progress-container {
+        color:black;
+        width: 100%;
+        margin-top:20px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        border-radius: 5px; 
+        overflow: hidden; 
+        text-align: center;
+    }
+    .progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: #d789d7;
+        text-align: center;
+        line-height: 30px;
+        color: black;
+    }
+    .slide {
+        display: none;
+    }
+    .active-slide {
+        display: block;
+    }
+    .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top:20px;
+    }
+    .btn {
+        background-color: #d789d7;
+        color: white;
+        padding: 10px 20px;
+        border: 1px solid black;
+        border-radius:5px;
+        cursor: pointer;
+    }
+    fieldset {
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border:1px solid black;
+        padding:20px;
+    }
+</style>
